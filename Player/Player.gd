@@ -5,7 +5,7 @@ const SPEED = 1500
 const GRAVITY = 300
 const UP = Vector2(0,-1)
 const DOWN = Vector2(0,1)
-const JUMP_SPEED = 4500
+const JUMP_SPEED = 6000
 
 signal animate
 

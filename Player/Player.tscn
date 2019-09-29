@@ -19,4 +19,11 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="PlayerAnimation" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 3, 3 )
+limit_left = 0
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
 [connection signal="animate" from="." to="PlayerAnimation" method="_on_Player_animate"]
