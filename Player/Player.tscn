@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/PlayerAnimation.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://GFX/Background/bg_layer2.png" type="Texture" id=4]
 [ext_resource path="res://GFX/Background/bg_layer3.png" type="Texture" id=5]
 [ext_resource path="res://GFX/Background/bg_layer4.png" type="Texture" id=6]
+[ext_resource path="res://SFX/jump1.ogg" type="AudioStream" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 66.0
@@ -13,6 +14,7 @@ height = 70.0
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 606.607, 302.869 )
+collision_mask = 6
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -73,4 +75,7 @@ motion_mirroring = Vector2( 2048, 0 )
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 [connection signal="animate" from="." to="PlayerAnimation" method="_on_Player_animate"]
